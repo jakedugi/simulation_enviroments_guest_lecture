@@ -1,6 +1,9 @@
-tensorflow==2.13.0
+# For pip-based installs (Linux, Intel macOS)
+# macOS M1/M2 users: follow conda + pip hybrid setup in README
+
+tensorflow==2.13.0          # Use tensorflow-macos==2.13.0 on M1/M2
 tf-agents[reverb]
-pybullet
+pybullet==3.2.5             # Prebuilt wheel avoids C++ compile errors
 matplotlib
 pyvirtualdisplay
 imageio==2.4.0

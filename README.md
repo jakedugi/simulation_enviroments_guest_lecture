@@ -11,18 +11,59 @@ Originally developed for a 2025 guest lecture in Applied Machine Learning.
 
 ---
 
-## Quick start
+## Setup
+
+### For macOS (M1/M2) – Recommended (Conda + Pip Hybrid)
+
 ```bash
-# Clone and set up environment
-git clone https://github.com/your-github/simulation_enviroments.git
+# 1. Create conda environment with Python 3.10
+conda create -n simenv python=3.10 -c conda-forge -y
+conda activate simenv
+
+# 2. Install TensorFlow dependencies (optimized for Apple Silicon)
+conda install -c apple tensorflow-deps -y
+
+# 3. Install the rest of the environment via conda-forge
+conda install -c conda-forge pybullet=3.2.5 matplotlib pyvirtualdisplay imageio=2.4.0 tqdm -y
+
+# 4. Install Apple TensorFlow and TF-Agents via pip
+pip install tensorflow-macos==2.13.0 tensorflow-metal "tf-agents[reverb]"
+```
+
+### Linux & Intel macOS — Pure Pip Setup
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip setuptools wheel
+
+pip install \
+  tensorflow==2.13.0 \
+  "tf-agents[reverb]" \
+  pybullet==3.2.5 \
+  matplotlib \
+  pyvirtualdisplay \
+  imageio==2.4.0 \
+  tqdm
+```
+
+---
+
+## Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/jakedugi/simulation_enviroments.git
 cd simulation_enviroments
-python -m venv .venv && source .venv/bin/activate
+
+# If using pip:
+python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
-# Train CartPole (fast)
+# Run CartPole (quick test)
 python examples/train_cartpole.py
 
-# Train Minitaur (slow, requires PyBullet and GPU)
+# Run Minitaur (slow, requires GPU + PyBullet)
 python examples/train_minitaur.py
 ```
 
@@ -58,4 +99,4 @@ Check out:
 	•	notebooks/CartPole_DQN_demo.ipynb
 	•	notebooks/Minitaur_SAC_demo.ipynb
 
- ---
+
