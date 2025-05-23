@@ -1,0 +1,7 @@
+tensorflow==2.13.0
+tf-agents[reverb]
+pybullet
+matplotlib
+pyvirtualdisplay
+imageio==2.4.0
+tqdm
