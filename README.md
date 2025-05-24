@@ -1,6 +1,6 @@
 # Simulation Environments — Guest Lecture Edition
 
-Note: This repo was developed for a guest lecture / class project. It includes working demos from [2023], but is not actively maintained.
+Note: This repo was developed for a guest lecture / class project. It includes working demos from 2023, but is not actively maintained.
 
 Minimal, testable, and production-style RL training loops built for teaching.
 Implements:
